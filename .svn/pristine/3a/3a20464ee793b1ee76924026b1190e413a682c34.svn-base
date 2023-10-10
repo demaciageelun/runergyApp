@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/home/home"
+  ],
+  "subPackages": [
+    {
+      "root": "subpkg",
+      "pages": [
+        "ssc/ssc",
+        "myProfile/myProfile",
+        "myInfo/myInfo",
+        "profileInfo/profileInfo",
+        "attendance/attendance",
+        "entryPersonInfo/entryPersonInfo",
+        "entryOtherInfo/entryOtherInfo",
+        "uploadIdCard/uploadIdCard",
+        "uploadDiploma/uploadDiploma",
+        "uploadGraduate/uploadGraduate",
+        "uploadBankCard/uploadBankCard",
+        "uploadSkill/uploadSkill",
+        "uploadSeparation/uploadSeparation",
+        "uploadMedicalReport/uploadMedicalReport",
+        "uploadResume/uploadResume",
+        "uploadOneInchPhoto/uploadOneInchPhoto",
+        "fileFinsh/fileFinsh",
+        "employeeSalary/employeeSalary",
+        "employeeSalaryDetail/employeeSalaryDetail",
+        "salaryNewPassword/salaryNewPassword",
+        "salaryEntryPassword/salaryEntryPassword",
+        "salaryChangePassword/salaryChangePassword",
+        "salaryConfirm/salaryConfirm"
+      ]
+    }
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "我的润阳",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8",
+    "backgroundColorBottom": "#F7F7F7"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/static/index_1.png",
+        "selectedIconPath": "/static/index_2.png"
+      },
+      {
+        "pagePath": "pages/home/home",
+        "text": "我的",
+        "iconPath": "/static/home_1.png",
+        "selectedIconPath": "/static/home_2.png"
+      }
+    ]
+  },
+  "__usePrivacyCheck__": true,
+  "usingComponents": {}
+}

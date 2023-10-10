@@ -1,0 +1,1 @@
+<view><view class="container"><text class="tip">密码长度8~32位,需包含数字、字母、符合至少2种或以上元素</text><input class="idCard" placeholder="请输入身份证号"/><input class="employeeCode" placeholder="请输入工号"/><input class="password" placeholder="请输入密码" type="safe-password"/><input class="password2" placeholder="请再次输入密码" type="safe-password"/><button type="primary">确认</button></view></view>

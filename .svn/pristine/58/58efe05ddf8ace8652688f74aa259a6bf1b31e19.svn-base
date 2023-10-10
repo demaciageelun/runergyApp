@@ -1,0 +1,1 @@
+<view><view class="container"><input class="password" placeholder="请输入密码"/><button type="primary" data-event-opts="{{[['tap',[['submit',['$event']]]]]}}" bindtap="__e">确认</button><text data-event-opts="{{[['tap',[['changePassword',['$event']]]]]}}" bindtap="__e">忘记密码？</text></view></view>

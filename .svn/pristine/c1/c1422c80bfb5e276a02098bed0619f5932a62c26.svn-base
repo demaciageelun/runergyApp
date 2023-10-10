@@ -1,0 +1,299 @@
+<template>
+	<view>
+		<view class="container">
+			<view class="title">
+				<image :src="heardPicUrl" class="logo"></image>
+				<view class="person-info">
+					<view class="person-info-top">
+						<text class="userName">周为</text>
+						<text class="employeeTime">在职3年05个月</text>
+					</view>
+					<text class="department">信息技术部 | IT主管</text>
+				</view>
+			</view>
+			<view class="personalInfo">
+				<uni-forms ref="valiForm" v-model="valiFormData" label-position="top" label-width="200px">
+					<uni-forms-item label="性别" required name="candidate_name">
+						<uni-easyinput v-model="valiFormData.employee_sex" disabled />
+					</uni-forms-item>
+					<uni-forms-item label="民族" required name="employee_nation_id">
+						<uni-data-select v-model="valiFormData.employee_nation_id" :localdata="nationOptions"
+							disabled></uni-data-select>
+					</uni-forms-item>
+					<uni-forms-item label="身份证号" required name="employee_identity_no">
+						<uni-easyinput v-model="valiFormData.employee_identity_no" disabled />
+					</uni-forms-item>
+					<uni-forms-item label="身份证生效日期" required name="employee_identity_no_effective_date">
+						<uni-datetime-picker type="date" :value="valiFormData.employee_identity_no_effective_date" />
+					</uni-forms-item>
+					<uni-forms-item label="身份证失效日期" required name="employee_identity_no_failre_date">
+						<uni-datetime-picker type="date" :value="valiFormData.employee_identity_no_failre_date" />
+					</uni-forms-item>
+					<uni-forms-item label="出生日期" required name="employee_birthday">
+						<uni-datetime-picker type="date" :value="valiFormData.employee_birthday" disabled />
+					</uni-forms-item>
+					<uni-forms-item label="个人邮箱" required name="employee_email">
+						<uni-easyinput v-model="valiFormData.employee_email" />
+					</uni-forms-item>
+					<uni-forms-item label="婚姻状况" required name="employee_marriage_status">
+						<uni-data-select v-model="valiFormData.employee_marriage_status"
+							:localdata="marriageOptions"></uni-data-select>
+					</uni-forms-item>
+					<uni-forms-item label="户籍地址" required name="employee_nation_address">
+						<uni-easyinput type='textarea' v-model="valiFormData.employee_nation_address" />
+					</uni-forms-item>
+					<uni-forms-item label="现住址" required name="employee_now_address">
+						<uni-easyinput type='textarea' v-model="valiFormData.employee_now_address" />
+					</uni-forms-item>
+					<uni-forms-item label="电话号码" required name="employee_phone">
+						<uni-easyinput type="number" v-model="valiFormData.employee_phone" />
+					</uni-forms-item>
+					<uni-forms-item label="政治面貌" required name="employee_political_status">
+						<uni-data-select v-model="valiFormData.employee_political_status"
+							:localdata="politicalOptions"></uni-data-select>
+					</uni-forms-item>
+					<uni-forms-item label="紧急联系人" required name="employee_emergency_contact">
+						<uni-easyinput v-model="valiFormData.employee_emergency_contact" />
+					</uni-forms-item>
+					<uni-forms-item label="紧急联系人关系" required name="employee_emergency_contact_relation">
+						<uni-data-select v-model="valiFormData.employee_emergency_contact_relation"
+							:localdata="marriageOptions"></uni-data-select>
+					</uni-forms-item>
+					<uni-forms-item label="紧急联系人电话" required name="employee_emergency_contact_phone">
+						<uni-easyinput type="number" v-model="valiFormData.employee_emergency_contact_phone" />
+					</uni-forms-item>
+					<uni-forms-item label="第一学历" required name="employee_first_degree_id">
+						<uni-data-select v-model="valiFormData.employee_first_degree_id"
+							:localdata="firstDegreeOptions"></uni-data-select>
+					</uni-forms-item>
+					<uni-forms-item label="第一学历学校名称" required name="employee_first_degree_school">
+						<uni-easyinput v-model="valiFormData.employee_first_degree_school" placeholder="第一学历学校名称" />
+					</uni-forms-item>
+					<uni-forms-item label="第一学历专业" required name="employee_first_degree_major">
+						<uni-easyinput v-model="valiFormData.employee_first_degree_major" placeholder="第一学历专业" />
+					</uni-forms-item>
+					<uni-forms-item label="第一学历教育方式" required name="employee_first_degree_type">
+						<uni-data-select v-model="valiFormData.employee_first_degree_type"
+							:localdata="firstDegreeTypeOptions" :disabled="true" :clear="false"></uni-data-select>
+					</uni-forms-item>
+					<uni-forms-item label="第一学历毕业日期" required name="employee_first_degree_graduate_date">
+						<uni-datetime-picker type="date" :clear-icon="false"
+							v-model="valiFormData.employee_first_degree_graduate_date" readonly />
+					</uni-forms-item>
+					<uni-forms-item label="进修学历" name="employee_train_degree">
+						<uni-easyinput v-model="valiFormData.employee_train_degree" placeholder="进修学历" />
+					</uni-forms-item>
+					<uni-forms-item label="进修学历学校名称" name="employee_train_degree_school">
+						<uni-easyinput v-model="valiFormData.employee_train_degree_school" placeholder="进修学历学校名称" />
+					</uni-forms-item>
+					<uni-forms-item label="进修学历专业" name="employee_train_degree_major">
+						<uni-easyinput v-model="valiFormData.employee_train_degree_major" placeholder="进修学历专业" />
+					</uni-forms-item>
+					<uni-forms-item label="进修学历教育方式" name="employee_train_degree_type">
+						<uni-data-select v-model="valiFormData.employee_train_degree_type"
+							:localdata="trainDegreeOptions"></uni-data-select>
+					</uni-forms-item>
+					<uni-forms-item label="进修学历毕业日期" name="employee_train_degree_graduate_date">
+						<uni-datetime-picker type="date" :clear-icon="false"
+							v-model="valiFormData.employee_train_degree_graduate_date" />
+					</uni-forms-item>
+					<uni-forms-item label="银行卡号" required name="employee_bank_no">
+						<uni-easyinput v-model="valiFormData.employee_bank_no" />
+					</uni-forms-item>
+					<uni-forms-item label="开户行" required name="employee_bank_deposit">
+						<uni-easyinput v-model="valiFormData.employee_bank_deposit" />
+					</uni-forms-item>
+				</uni-forms>
+				<button type="primary">提交修改</button>
+			</view>
+		</view>
+	</view>
+</template>
+<script>
+	export default {
+		data() {
+			return {
+				heardPicUrl: '/static/face.jpg',
+				valiFormData: {
+					employee_sex: '男',
+					employee_nation_id: 0,
+					employee_identity_no: '320982199504293011',
+					employee_identity_no_effective_date: '2017-09-01',
+					employee_identity_no_failre_date: '2027-09-01',
+					employee_birthday: '1995-04-29',
+					employee_email: 'zhouw@runergy.cn',
+					employee_marriage_status: '1',
+					employee_nation_address: '江苏省盐城市大丰区',
+					employee_now_address: '江苏省盐城市大丰区',
+					employee_phone: 1333798199,
+					employee_political_status: '群众',
+					employee_emergency_contact: '蒋巧玲',
+					employee_emergency_contact_relation: '配偶',
+					employee_emergency_contact_phone: '18452563013',
+					employee_first_degree_id: '4',
+					employee_first_degree_school: '南京邮电大学',
+					employee_first_degree_major: '材料华为',
+					employee_first_degree_type: '全日制',
+					employee_first_degree_graduate_date: '2017-06-21',
+					employee_train_degree: '',
+					employee_train_degree_school: '',
+					employee_train_degree_major: '',
+					employee_train_degree_type: '',
+					employee_train_degree_graduate_date: '',
+					employee_bank_no: '67123189726390127863017301',
+					employee_bank_deposit: '江苏银行大丰支行'
+				},
+				nationOptions: [{
+					value: 0,
+					text: "汉族"
+				}],
+				marriageOptions: [{
+					value: '0',
+					text: '未婚'
+				}, {
+					value: '1',
+					text: '已婚'
+				}, {
+					value: '2',
+					text: '离异'
+				}],
+				politicalOptions: [{
+					value: '党员',
+					text: '党员'
+				}, {
+					value: '预备党员',
+					text: '预备党员'
+				}, {
+					value: '群众',
+					text: '群众'
+				}],
+				firstDegreeOptions: [{
+					value: '1',
+					text: '高中及以下'
+				}, {
+					value: '2',
+					text: '中专'
+				}, {
+					value: '3',
+					text: '大专'
+				}, {
+					value: '4',
+					text: '本科'
+				}, {
+					value: '5',
+					text: '硕士'
+				}, {
+					value: '6',
+					text: '博士及以上'
+				}, {
+					value: '999999',
+					text: ''
+				}],
+				firstDegreeTypeOptions: [{
+					value: '全日制',
+					text: '全日制'
+				}, {
+					value: '非全日制',
+					text: '非全日制'
+				}],
+				trainDegreeOptions: [{
+					value: '01',
+					text: '全日制'
+				}, {
+					value: '02',
+					text: '非全日制'
+				}, {
+					value: '03',
+					text: '远程教育'
+				}, {
+					value: '04',
+					text: '成人高考'
+				}],
+			}
+		}
+	}
+</script>
+<style lang="scss" scoped>
+	page {
+		background-color: #f5f5f5;
+	}
+
+	.container {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		.title {
+			border-radius: 5px;
+			width: 94%;
+			height: 100px;
+			background-color: #fff;
+			margin: 10px 0px 10px 0px;
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+			align-items: center;
+
+			.logo {
+				width: 75px;
+				height: 75px;
+				border-radius: 50px;
+				margin-left: 15px;
+			}
+
+			.person-info {
+				margin-left: 15px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: flex-start;
+
+				.person-info-top {
+					margin-bottom: 10px;
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+					align-items: center;
+
+					.userName {
+						font-weight: 700;
+					}
+
+					.employeeTime {
+						margin-left: 15px;
+						padding: 1px 5px 0px 5px;
+						background-color: #D7EAFF;
+						color: #3894FF;
+						border: solid 1px #3894FF;
+						border-radius: 5px;
+					}
+				}
+
+				.department {
+					color: #C2C1C1;
+					font-size: 14px;
+				}
+			}
+		}
+
+		.personalInfo {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			background-color: #fff;
+			width: 94%;
+
+			.uni-forms {
+				width: 90%;
+			}
+			button{
+				width: 90%;
+				margin-top: 20px;
+				margin-bottom: 40px;
+			}
+		}
+	}
+</style>

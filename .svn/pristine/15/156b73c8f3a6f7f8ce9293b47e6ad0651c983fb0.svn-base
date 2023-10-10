@@ -1,0 +1,53 @@
+import App from './App'
+import { $http } from "@escook/request-miniprogram";
+
+// #ifndef VUE3
+import Vue from 'vue'
+
+uni.$http = $http;
+// $http.baseUrl = 'http://172.16.12.204:8011'
+// $http.baseUrl = 'http://218.92.177.146:28001'
+// $http.baseUrl = "http://10.60.13.227:8111";
+// $http.baseUrl = "https://backend.runergy.top:8777";
+// 请求拦截器
+$http.beforeRequest = function (options) {
+  uni.showLoading({
+    title: "数据加载中...",
+  });
+};
+// 响应拦截器
+$http.afterRequest = function (options) {
+  uni.hideLoading();
+};
+// 封装弹窗的方法
+uni.$showMsg = function (
+  title = "数据请求失败",
+  duration = 1500,
+  icon = "none"
+) {
+  uni.showToast({
+    title,
+    duration,
+    icon,
+  });
+};
+
+
+import './uni.promisify.adaptor'
+Vue.config.productionTip = false
+App.mpType = 'app'
+const app = new Vue({
+  ...App
+})
+app.$mount()
+// #endif
+
+// #ifdef VUE3
+import { createSSRApp } from 'vue'
+export function createApp() {
+  const app = createSSRApp(App)
+  return {
+    app
+  }
+}
+// #endif

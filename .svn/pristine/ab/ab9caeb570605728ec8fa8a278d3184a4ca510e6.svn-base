@@ -1,0 +1,150 @@
+<template>
+	<view>
+		<view class="container">
+			<view class="title">
+				<image :src="heardPicUrl" class="logo"></image>
+				<view class="person-info">
+					<text class="userName">周为</text>
+					<text class="department">信息技术部（IT主管）</text>
+				</view>
+				<text class="tag" style="color: #1B84FC;" v-if="status=='已查看'">{{status}}</text>
+				<text class="tag" style="color: #E99D42;" v-if="status=='已确认'">{{status}}</text>
+			</view>
+			<view class="salary-container">
+				<uni-section class="mb-10" title="薪资明细"  type="line"></uni-section>
+				<view class="salary-list" v-for="(salaryItem, index) in salaryList" :index="index" :key="index">
+					<view style="width: 35%; font-size: 15px;font-weight: 600;"><text>{{salaryItem.title + "："}}</text></view>
+					<text style="font-size: 14px; color: gray;">{{salaryItem.unit + salaryItem.value}}</text>
+				</view>
+			</view>
+			<button type="primary" @click="salaryConfirm">薪资确认</button>
+		</view>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				heardPicUrl: '/static/face.jpg',
+				status: '已查看',
+				salaryList: [{
+					'title': '实发薪资',
+					'value': '29001',
+					'unit': '￥'
+				}, {
+					'title': '薪资合计',
+					'value': '33000',
+					'unit': '￥'
+				}, {
+					'title': '个税',
+					'value': '2237',
+					'unit': '￥'
+				}, {
+					'title': '基本薪资',
+					'value': '18000',
+					'unit': '￥'
+				}, {
+					'title': '绩效薪资',
+					'value': '3000',
+					'unit': '￥'
+				}, {
+					'title': '绩效得分',
+					'value': '100',
+					'unit': ''
+				}, {
+					'title': '加班补贴',
+					'value': '1000',
+					'unit': '￥'
+				}, {
+					'title': '伙食补贴',
+					'value': '500',
+					'unit': '￥'
+				}, {
+					'title': '交通补贴',
+					'value': '500',
+					'unit': '￥'
+				}, ]
+			};
+		},
+		methods:{
+			salaryConfirm(){
+				uni.navigateTo({
+					url: '/subpkg/salaryConfirm/salaryConfirm'
+				})
+			}
+		}
+	}
+</script>
+
+<style lang="scss">
+	page {
+		background-color: #f5f5f5;
+	}
+
+	.container {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		.title {
+			border-radius: 5px;
+			width: 90%;
+			height: 100px;
+			background-color: #fff;
+			margin: 25px 0px 25px 0px;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			align-items: center;
+
+			.logo,
+			.tag {
+				width: 75px;
+				height: 75px;
+				border-radius: 50px;
+			}
+
+			.person-info {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: flex-start;
+
+				.userName {
+					font-weight: 700;
+					margin-bottom: 10px;
+				}
+			}
+
+			.tag {
+				line-height: 75px;
+				font-size: 24px;
+			}
+		}
+
+		.salary-container {
+			width: 90%;
+			border-radius: 5px;
+			background-color: #fff;
+			
+
+			.salary-list {
+				width: 100%;
+				height: 45px;
+				border-bottom: solid 1px #f5f5f5;
+				display: flex;
+				flex-direction: row;
+				justify-content: flex-start;
+				align-items: center;
+				padding-left: 20px;
+			}
+		}
+		button{
+			width: 90%;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+	}
+</style>

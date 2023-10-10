@@ -1,0 +1,204 @@
+{
+	"pages": [{
+		"path": "pages/index/index",
+		"style": {
+			"navigationBarTitleText": "",
+			"enablePullDownRefresh": false
+		}
+	}, {
+		"path": "pages/home/home",
+		"style": {
+			"navigationBarTitleText": "",
+			"enablePullDownRefresh": false
+		}
+
+	}],
+	"subPackages": [{
+		"root": "subpkg",
+		"pages": [{
+			"path": "ssc/ssc",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"backgroundColor": "#000000"
+			}
+		}, {
+			"path": "myProfile/myProfile",
+			"style": {
+				"navigationBarTitleText": "我的档案",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "myInfo/myInfo",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "profileInfo/profileInfo",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "attendance/attendance",
+			"style": {
+				"navigationBarTitleText": "考勤查询",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "entryPersonInfo/entryPersonInfo",
+			"style": {
+				"navigationBarTitleText": "身份确认",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "entryOtherInfo/entryOtherInfo",
+			"style": {
+				"navigationBarTitleText": "信息填写",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "uploadIdCard/uploadIdCard",
+			"style": {
+				"navigationBarTitleText": "身份证上传",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "uploadDiploma/uploadDiploma",
+			"style": {
+				"navigationBarTitleText": "毕业证上传",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "uploadGraduate/uploadGraduate",
+			"style": {
+				"navigationBarTitleText": "学位证上传",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "uploadBankCard/uploadBankCard",
+			"style": {
+				"navigationBarTitleText": "银行卡上传",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "uploadSkill/uploadSkill",
+			"style": {
+				"navigationBarTitleText": "职称/技能证书",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "uploadSeparation/uploadSeparation",
+			"style": {
+				"navigationBarTitleText": "离职证明上传",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "uploadMedicalReport/uploadMedicalReport",
+			"style": {
+				"navigationBarTitleText": "体检报告上传",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "uploadResume/uploadResume",
+			"style": {
+				"navigationBarTitleText": "简历上传",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "uploadOneInchPhoto/uploadOneInchPhoto",
+			"style": {
+				"navigationBarTitleText": "一寸照片上传",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "fileFinsh/fileFinsh",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "employeeSalary/employeeSalary",
+			"style": {
+				"navigationBarTitleText": "薪资列表",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "employeeSalaryDetail/employeeSalaryDetail",
+			"style": {
+				"navigationBarTitleText": "薪资详情",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "salaryNewPassword/salaryNewPassword",
+			"style": {
+				"navigationBarTitleText": "创建薪资查询密码",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "salaryEntryPassword/salaryEntryPassword",
+			"style": {
+				"navigationBarTitleText": "输入薪资查询密码",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "salaryChangePassword/salaryChangePassword",
+			"style": {
+				"navigationBarTitleText": "重置薪资查询密码",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "salaryConfirm/salaryConfirm",
+			"style": {
+				"navigationBarTitleText": "薪资签字确认",
+				"enablePullDownRefresh": false
+			}
+
+		}]
+	}],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "我的润阳",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8",
+		"backgroundColorBottom": "#F7F7F7"
+	},
+	"uniIdRouter": {},
+	"tabBar": {
+		"list": [{
+				"pagePath": "pages/index/index",
+				"text": "首页",
+				"iconPath": "/static/index_1.png",
+				"selectedIconPath": "/static/index_2.png"
+			},
+			{
+				"pagePath": "pages/home/home",
+				"text": "我的",
+				"iconPath": "/static/home_1.png",
+				"selectedIconPath": "/static/home_2.png"
+			}
+		]
+	}
+}

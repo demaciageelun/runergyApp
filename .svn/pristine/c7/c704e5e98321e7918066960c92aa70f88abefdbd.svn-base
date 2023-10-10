@@ -1,0 +1,1 @@
+<view><view class="step-container"><uni-steps vue-id="56d4ee7c-1" options="{{list1}}" active-icon="checkbox" active="{{active}}" bind:__l="__l"></uni-steps></view><view class="container"><image src="/static/success.svg"></image><view><text>已完成入职流程，请等待审批!</text></view></view></view>
