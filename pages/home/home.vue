@@ -36,7 +36,7 @@
 				heardPicUrl: '/static/face.jpg',
 				messageList: [{
 						'icon': 'wallet',
-						'title': '您2023年08月薪资已发放',
+						'title': '您2023年08123123月薪资已发放',
 						'type': 'salary',
 						'id': 1
 					},
